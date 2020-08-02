@@ -1,0 +1,2693 @@
+<!-- *CSS Border* -->
+<!-- CSS "border" property defines a border around an HTML element -->
+<!-- <style> daima <head> tag'inin içinde yer alır -->
+<style>
+    p {
+        border: 1px solid powderblue;
+    }
+</style>
+
+
+
+
+<!-- *CSS Padding* -->
+<!-- CSS padding property defines a padding (space) between the text and the border -->
+<!-- padding, metinle kenarlık arasında boşluğu ayarlar -->
+<head>
+    <style>
+        p {
+            border: 1px solid powderblue;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+</body>
+
+
+
+<!-- *CSS Margin* -->
+<!-- CSS margin property defines a margin (space) outside the border -->
+<style>
+    p {
+        border: 1px solid powderblue;
+        margin: 50px;
+    }
+</style>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+</body>
+
+
+
+<!-- *The id Attribute* -->
+<!-- to define a specific style for one special element, add an "id" attribute to the element -->
+<!-- then define a style for the element with the specific id -->
+<head>
+    <style>
+        #p01 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p id="p01">I am different.</p>
+</body>
+<!-- the "id" of an element should be unique within a page, so the id selector is used to select one unique elemen -->
+
+
+
+<!-- *The class Attribute* -->
+<!-- to define a style for special types of elements, add a class attribute to the element -->
+<!-- then define a style for the elements with the specific class -->
+<head>
+    <style>
+        p.error {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p class="error">I am different.</p>
+    <p>This is a paragraph.</p>
+    <p class="error">I am different too.</p>
+</body>
+
+
+
+<!-- *External References* -->
+<!-- external style sheets can be referenced with a full URL or with a path relative to the current web page -->
+
+<!-- This example uses a full URL to link to a style sheet: -->
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+</head>
+
+<!-- This example links to a style sheet located in the html folder on the current web site: -->
+<head>
+    <link rel="stylesheet" href="/html/styles.css">
+</head>
+
+<!-- This example links to a style sheet located in the same folder as the current page: -->
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS __________ -->
+
+<!-- *Syntax* -->
+<!--
+    Selector     Declaration  Declaration
+    h1           {color:blue; font-size:12px}
+
+    the selector points to the HTML element you want to style
+    the declaration block contains one or more declarations separated by semicolons
+    each declaration includes a CSS property name and a value, separated by a colon
+    CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces
+-->
+<!-- CSS için kullandığımız <style> tag'leri, <head> in içinde yer alır -->
+<style>
+    p {
+        color: red;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS SELECTORS __________ -->
+<!-- 
+    CSS selectors are used to "find" (or select) the HTML elements you want to style
+    We can divide CSS selectors into five categories:
+    Simple selectors:           select elements based on name, id, class
+    Combinator selectors:       select elements based on a specific relationship between them
+    Pseudo-class selectors:     select elements based on a certain state
+    Pseudo-elements selectors:  select and style a part of an element
+    Attribute selectors:        select elements based on an attribute or attribute value
+-->
+
+
+
+<!-- *CSS element Selector* -->
+<!-- the element selector selects HTML elements based on the element name -->
+<!-- here, all <p> elements on the page will be center-aligned, with a red text color: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p {
+      text-align: center;
+      color: red;
+    } 
+</style>
+</head>
+<body> 
+    <p>Every paragraph will be affected by the style.</p>
+    <p id="para1">Me too!</p>
+    <p>And me!</p>
+</body>
+</html>
+
+
+
+<!-- *CSS id Selector* -->
+<!-- the id selector uses the id attribute of an HTML element to select a specific element -->
+<!-- the id of an element is unique within a page, so the id selector is used to select one unique element! -->
+<!-- to select an element with a specific id, write a hash (#) character, followed by the id of the element -->
+<!-- an id name cannot start with a number! -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    #para1 {
+        text-align: center;
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <p id="para1">Hello World!</p>
+    <p>This paragraph is not affected by the style.</p>
+</body>
+</html>
+
+
+
+<!-- *CSS class Selector* -->
+<!-- the class selector selects HTML elements with a specific class attribute -->
+<!-- to select elements with a specific class, write a period (.) character, followed by the class name -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .center {
+        text-align: center;
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1 class="center">Red and center-aligned heading</h1>
+    <p class="center">Red and center-aligned paragraph.</p> 
+</body>
+</html>
+
+
+<!-- you can also specify that only specific HTML elements should be affected by a class: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.center {    
+        text-align: center;
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1 class="center">This heading will not be affected</h1>
+    <p class="center">This paragraph will be red and center-aligned.</p> 
+</body>
+</html>
+
+
+<!-- HTML elements can also refer to more than one class: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.center {
+        text-align: center;
+        color: red;
+    }
+
+    p.large {
+        font-size: 300%;
+    }
+</style>
+</head>
+<body>
+    <h1 class="center">This heading will not be affected</h1>
+    <p class="center">This paragraph will be red and center-aligned.</p>
+    <p class="center large">This paragraph will be red, center-aligned, and in a large font-size.</p> 
+</body>
+</html>
+
+
+
+<!-- *CSS Universal Selector* -->
+<!-- the universal selector (*) selects all HTML elements on the page -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * {
+        text-align: center;
+        color: blue;
+    }
+</style>
+</head>
+<body>
+    <h1>Hello world!</h1>
+    <p>Every element on the page will be affected by the style.</p>
+    <p id="para1">Me too!</p>
+    <p>And me!</p>
+</body>
+</html>
+
+
+
+<!-- *CSS Grouping Selector* -->
+<!-- the grouping selector selects all the HTML elements with the same style definitions -->
+<!-- it will be better to group the selectors, to minimize the code -->
+<!-- to group selectors, separate each selector with a comma -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1, h2, p {
+        text-align: center;
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <h2>Smaller heading!</h2>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ HOW TO ADD CSS? __________ -->
+<!-- when a browser reads a style sheet, it will format the HTML document according to the information in the style sheet -->
+<!-- 
+    Three Ways to Insert CSS:
+    1)External CSS: by using an external CSS file 
+    2)Internal CSS: by using a <style> element inside a <head> section
+    3)Inline CSS:   by using the <style> attribute inside an <HTML> section
+-->
+
+
+
+<!-- 1)External CSS -->
+<!-- external style sheet is used to define the style for many HTML pages -->
+<!-- with an external style sheet, you can change the look of an entire web site, by changing one file -->
+<!-- external styles are defined within the <link> element, inside the <head> section of an HTML page: -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyles.css">
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph...</p>
+</body>
+</html> 
+
+
+<!-- external style sheet can be written in any text editor -->
+<!-- the file must not contain any HTML code, and must be saved with a ".css" extension -->
+<!-- 
+    here is how the "mystyles.css" looks: 
+    body {
+        background-color: powderblue;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    p {
+        color: red;
+    }
+-->
+
+
+
+<!-- 2)Internal CSS -->
+<!-- internal CSS is used to define a style for a single HTML page -->
+<!-- internal CSS is defined in the <head> section of an HTML page, within a <style> element -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        background-color: linen;
+    }
+    
+    h1 {
+        color: maroon;
+        margin-left: 40px;
+    } 
+</style>
+</head>
+<body> 
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+
+
+<!-- 3)Inline CSS -->
+<!-- inline CSS is used to apply a unique style to a "single" HTML element -->
+<!-- inline CSS uses the "style" attribute of an HTML element -->
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 style="color:blue;text-align:center;">This is a heading</h1>
+    <p style="color:red;">This is a paragraph.</p>
+</body>
+</html>
+
+
+
+<!-- *Multiple Style Sheets* -->
+<!-- hangisi daha sonra yazılmışsa o kısım geçerli olur -->
+
+<!-- if the internal style is defined after the link to the external style sheet -->
+<!-- the <h1> elements will be "gold": -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyles.css">
+<style>
+    h1 {
+      color: gold;
+    }
+</style>
+</head>
+<body>   
+    <h1>This is a heading. It must be gold</h1>
+</body>
+</html>   
+
+
+<!-- however, if the internal style is defined before the link to the external style sheet, the <h1> elements will be "navy": -->
+<!-- heading' color will be "slateblue" according to "mystyles.css" file-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+      color: gold; 
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="mystyles.css">
+</head>
+<body>
+    <h1>Heading's color is depends on mystyles.css file</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS COMMENTS __________ -->
+<!-- /*    */  arasına yazılır -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p {
+        color: red;    /* Set text color to red */
+    } 
+</style>
+</head>
+<body>
+    <p>Hello World!</p>
+    <p>This paragraph is styled with CSS.</p>
+    <p>CSS comments are not shown in the output.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS COLORS __________ -->
+
+<!-- *CSS Background Color* -->
+<h1 style="background-color: DodgerBlue;">Hello World</h1>
+<p style="background-color: violet">Nice paragraph</p>
+
+
+
+<!-- *CSS Text Color* -->
+<h1 style="color: Tomato;">Hello World</h1>
+<p style="color: DodgerBlue;">Lorem ipsum...</p>
+<p style="color: MediumSeaGreen;">Ut wisi enim...</p>
+
+
+
+<!-- *CSS Border Color* -->
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+<h1 style="border:3px solid DodgerBlue;">Hello World</h1>
+<h1 style="border:5px solid Violet;">Hello World</h1>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS BACKGROUNDS __________ -->
+
+<!-- 1)CSS Background Color -->
+<style>
+    body {
+        background-color: lightblue;
+    }
+</style>
+
+
+<!-- you can set the background color for any HTML elements: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        background-color: green;
+    }
+
+    div {
+        background-color: burlywood
+    }
+
+    p {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+    <h1>CSS background-color example!</h1>
+    <div>
+        This is a text inside a div element.
+        <p>This paragraph has its own background color.</p>
+        We are still in the div element.
+    </div>
+</body>
+</html>
+
+
+
+<!-- *Opacity / Transparency* -->
+<!-- the "opacity" property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        background-color: green;
+    }
+
+    div.first {
+        opacity: 0.1;
+    }
+
+    div.second {
+        opacity: 0.3;
+    }
+
+    div.third {
+        opacity: 0.6;
+    }
+</style>
+</head>
+<body>
+    <div class="first">
+        <h1>opacity 0.1</h1>
+    </div>
+
+    <div class="second">
+        <h1>opacity 0.3</h1>
+    </div>
+
+    <div class="third">
+        <h1>opacity 0.6</h1>
+    </div>
+
+    <div>
+        <h1>opacity 1 (default)</h1>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- 2)CSS Background Image -->
+<!-- by default, the image is repeated so it covers the entire element -->
+<style>
+    body {
+        background-image: url("wallpaper.jpg");
+    }
+</style>
+
+
+
+<!-- *CSS Background Repeat* -->
+<!-- by default, the background-image property repeats an image both horizontally and vertically -->
+<!-- if the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look better: -->
+<style>
+    body {
+        background-image: url("alex.jpg");
+        background-repeat: repeat-x;
+    }
+</style>
+
+
+<!-- "background-repeat: no-repeat": showing the background image only once -->
+<style>
+    body {
+        background-image: url("tree.jpg");
+        background-repeat: no-repeat;
+    }
+</style>
+
+
+<!-- "background-position": specify the position of the background image -->
+<style>
+    body {
+        background-image: url("tree.jpg");
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+</style>
+
+
+
+
+<!-- 3)CSS Background Attachment -->
+<!-- the "background-attachment" property specifies whether the background image should scroll or be fixed -->
+
+<!-- fixed: image will not scroll with the rest of the page: -->
+<style>
+    body {
+        background-image: url("tree.jpg");
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed;
+    }
+</style>
+
+
+<!-- scroll: image will scroll with the rest of the page: -->
+<style>
+    body {
+        background-image: url("tree.jpg");
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: scroll;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS BORDERS __________ -->
+
+<!-- 1)CSS Border Style -->
+<!-- the "border-style" property specifies what kind of border to display -->
+<!--
+    dotted:  Defines a dotted border
+    dashed:  Defines a dashed border
+    solid:   Defines a solid border
+    double:  Defines a double border
+    groove:  Defines a 3D grooved border. The effect depends on the border-color value
+    ridge:   Defines a 3D ridged border. The effect depends on the border-color value
+    inset:   Defines a 3D inset border. The effect depends on the border-color value
+    outset:  Defines a 3D outset border. The effect depends on the border-color value
+    none:    Defines no border
+    hidden:  Defines a hidden border
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.none {border-style: none;}
+</style>
+</head>
+<body>
+    <p class="dotted">A dotted border</p>
+    <p class="dashed">A dashed border</p>
+    <p class="solid">A solid border</p>
+    <p class="double">A double border</p>
+    <p class="none">No border</p>
+</body>
+</html>
+
+
+
+
+<!-- 2)CSS Border Width -->
+<!-- the "border-width" property does not work if it is used alone. Always specify the "border-style" property to set the borders first -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.one {
+        border-style: solid;
+        border-width: 5px;
+    }
+
+    .two {      /*  p.two yazmamız şart değil böyle de olur  */
+        border-style: solid;
+        border-width: medium;
+    }
+
+    p.three {
+        border-style: dotted;
+        border-width: 2px;
+    }
+</style>
+</head>
+<body>
+    <p class="one">Some text</p>
+    <p class="two">Some text</p>
+    <p class="three">Some text</p>
+</body>
+</html>
+
+
+<!-- *Specific Side Widths* -->
+<!-- the "border-width" property can have from one to four values (for the top border, right border, bottom border, and the left border) -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.one {
+        border-style: solid;
+        border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+    }
+
+    p.three {
+        border-style: solid;
+        border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+    }
+</style>
+</head>
+<body>
+    <p class="one">Some text</p>
+    <p class="two">Some text</p>
+    <p class="three">Some text</p>
+</body>
+</html>
+
+
+
+
+<!-- 3)CSS Border Color -->
+<style>
+    p.one {
+        border-style: solid;
+        border-color: red;
+    }   
+
+    p.two {
+        border-style: solid;
+        border-color: green;
+    }
+
+    p.three {
+        border-style: dotted;
+        border-color: blue;
+    }
+</style>
+
+
+<!-- *Specific Side Colors* -->
+<!-- the "border-color" property can have from one to four values (for the top border, right border, bottom border, and the left border) -->
+<style>
+    p.one {
+        border-style: solid;
+        border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+    }
+</style>
+
+
+
+
+<!-- 4)CSS Border Sides -->
+<!-- from the examples on the previous pages, you have seen that it is possible to specify a different border for each side -->
+<!-- in CSS, there are also properties for specifying each of the borders (top, right, bottom, and left) -->
+<style>
+    p {
+        border-top-style: dotted;
+        border-right-style: solid;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+    }
+</style>
+
+
+
+
+<!-- 5)CSS Shorthand Border Property -->
+<!-- to shorten the code, it is also possible to specify all the individual border properties in one property -->
+<style>
+    p {
+        border: 5px solid red;
+    }
+</style>
+
+
+<!-- you can also specify all the individual border properties for just one side: -->
+<style>
+    p {
+        border-left: 6px solid red;  /* sol kenar kırmızı olacak sadece */
+        background-color: lightgrey;
+    }
+</style>
+
+
+
+
+<!-- 6)CSS Rounded Borders -->
+<!-- the "border-radius" property is used to add rounded borders to an element -->
+<style>
+    p {
+        border: 2px solid cyan;
+        border-radius: 5px;
+    }   
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS MARGINS __________ -->
+<!-- the CSS "margin" properties are used to create space around elements, outside of any defined borders -->
+<!-- there are properties for setting the margin for each side of an element (top, right, bottom, and left) -->
+
+
+<!-- *Margin - Individual Sides* -->
+<!-- 
+    CSS has properties for specifying the margin for each side of an element:
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left
+
+    All the margin properties can have the following values:
+    auto - the browser calculates the margin
+    length - specifies a margin in px, pt, cm, etc.
+    % - specifies a margin in % of the width of the containing element
+    inherit - specifies that the margin should be inherited from the parent element
+-->
+<style>
+    p {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 180px;
+    }
+</style>
+<body>
+    <p>p element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px </p>
+</body>
+
+
+
+<!-- *Margin - Shorthand Property* -->
+<!-- to shorten the code, it is possible to specify all the margin properties in one property -->
+<style>
+    p {
+        margin: 25px 50px 75px 100px;  /*  top, right, bottom, left  */
+    }
+</style>
+
+
+<style>
+    p {
+        margin: 25px 50px 75px;  /*  top, right-left, bottom  */
+    }
+</style>
+
+
+<style>
+    p {
+        margin: 25px 50px;  /*  top-bottom, right-left  */
+    }
+</style>
+
+
+<style>
+    p {
+        margin: 25px;  /*  all margins are 25px  */
+    }
+</style>
+
+
+
+<!-- *The auto Value* -->
+<!-- you can set the margin property to auto to horizontally center the element within its container -->
+<style>
+    div {
+        width: 300px;
+        margin: auto;
+        border: 1px solid red;
+    }
+</style>
+
+
+
+<!-- *The inherit Value* -->
+<!-- this example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>) -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        border: 1px solid red;
+        margin-left: 100px;
+    }
+
+    p.ex1 {
+        margin-left: inherit;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <p class="ex1">This paragraph has an inherited left margin (from the div element).</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS PADDING __________ -->
+<!-- the CSS "padding" properties are used to generate space around an element's content, inside of any defined borders -->
+<!-- border'ın içinde yazılan kelimenin border'a olan uzaklığını belirlemek için kullanılır -->
+
+
+<!-- *Padding - Individual Sides* -->
+<style>
+    div {
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+    }
+</style>
+
+
+
+<!-- *Padding - Shorthand Property* -->
+<style>
+    div {
+        padding: 25px 50px 75px 100px;  /*  top, right, bottom, left  */
+    }
+</style>
+
+
+<style>
+    div {
+        padding: 25px 50px 75px;  /*  top, right-left, bottom  */
+    }
+</style>
+
+
+<style>
+    div {
+        padding: 25px 50px;  /*  top-bottom, right-left  */
+    }
+</style>
+
+
+<style>
+    div {
+        padding: 25px;  /*  all paddings are 25px  */
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS HEIGHT AND WIDTH __________ -->
+<!--
+    The height and width properties may have the following values:
+    auto:     This is default. The browser calculates the height and width
+    length:   Defines the height/width in px, cm etc
+    %:        Defines the height/width in percent of the containing block
+    initial:  Sets the height/width to its default value
+    inherit:  The height/width will be inherited from its parent value
+-->
+<style>
+    div {
+        height: 200px;
+        width: 50%;
+        background-color: green;
+    }
+</style>
+</style>
+
+
+
+<!-- *Setting max-width* -->
+<!-- the "max-width" property is used to set the maximum width of an element -->
+<!-- the "max-width" can be specified in length values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default. Means that there is no maximum width) -->
+<!-- the problem with the <div> above occurs when the browser window is smaller than the width of the element (500px). The browser then adds a horizontal scrollbar to the page -->
+<!-- using "max-width" instead, in this situation, will improve the browser's handling of small windows --> 
+<!-- the value of the "max-width" property overrides "width" -->
+<style>
+    div {
+        max-width: 500px;
+        height: 10cm;
+        background-color: indigo;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS BOX MODEL __________ -->
+<!-- all HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout -->
+<!-- the CSS box model is essentially a box that wraps around every HTML element -->
+<!--
+    It consists of: margins, borders, padding, and the actual content:
+    content:  The content of the box, where text and images appear
+    padding:  Clears an area around the content. The padding is transparent
+    border:   A border that goes around the padding and content
+    margin:   Clears an area outside the border. The margin is transparent
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        background-color: lightgrey;
+        width: 300px;
+        border: 15px solid green;
+        padding: 50px;
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+    <h2>Demonstrating the Box Model</h2>
+    <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: borders, padding, margins, and the actual content.</p>
+    <div>This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS OUTLINE __________ -->
+<!-- eğer varsa border'ın hemen dışında onu çevreleyecek şekilde yer alır -->
+<!-- an outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out" -->
+<!--
+    CSS has the following outline properties:
+    outline-style:  bu olmadan alttaki hiçbiri çalışamaz
+    outline-color
+    outline-width
+    outline-offset
+    outline
+-->
+
+
+
+<!-- *CSS Outline Style* -->
+<!--
+    The outline-style property specifies the style of the outline, and can have one of the following values:
+    dotted:  Defines a dotted outline
+    dashed:  Defines a dashed outline
+    solid:   Defines a solid outline
+    double:  Defines a double outline
+    groove:  Defines a 3D grooved outline
+    ridge:   Defines a 3D ridged outline
+    inset:   Defines a 3D inset outline
+    outset:  Defines a 3D outset outline
+    none:    Defines no outline
+    hidden:  Defines a hidden outline
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p {outline-color:red;}
+    p.dotted {outline-style: dotted;}
+    p.dashed {outline-style: dashed;}
+    p.solid {outline-style: solid;}
+    p.double {outline-style: double;}
+</style>
+</head>
+<body>
+    <h2>The outline-style Property</h2>
+    <p class="dotted">A dotted outline</p>
+    <p class="dashed">A dashed outline</p>
+    <p class="solid">A solid outline</p>
+    <p class="double">A double outline</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *CSS Outline Width* -->
+<!--
+    The outline-width property specifies the width of the outline, and can have one of the following values:
+    thin:           (typically 1px)
+    medium:         (typically 3px)
+    thick:          (typically 5px)
+    specific size:  (in px, pt, cm, em, etc)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.ex1 {
+        border: 11px solid black;
+        outline-style: solid;
+        outline-color: red;
+        outline-width: thin;
+    }
+
+    p.ex2 {
+        border: 2px solid black;
+        outline-style: solid;
+        outline-color: red;
+        outline-width: medium;
+    }
+
+    p.ex3 {
+        border: 3px solid black;
+        outline-style: solid;
+        outline-color: red;
+        outline-width: thick;
+    }
+
+    p.ex4 {
+        border: 4px solid black;
+        outline-style: dashed;
+        outline-color:green;
+        outline-width: 4px;
+    }
+</style>
+</head>
+<body>
+    <h2>The outline-width Property</h2>
+    <p class="ex1">A thin outline</p>
+    <p class="ex2">A medium outline</p>
+    <p class="ex3">A thick outline</p>
+    <p class="ex4">A 4px thick outline</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *CSS Outline Color* -->
+<!-- 
+    The color can be set by:
+    name:    specify a color name, like "red"
+    HEX:     specify a hex value, like "#ff0000"
+    RGB:     specify a RGB value, like "rgb(255,0,0)"
+    HSL:     specify a HSL value, like "hsl(0, 100%, 50%)"
+    invert:  performs a color inversion (which ensures that the outline is visible, regardless of color background)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.ex1 {
+        border: 2px solid black;
+        outline-style: solid;
+        outline-color: red;
+    }
+
+    p.ex2 {
+        border: 2px solid black;
+        outline-style: dotted;
+        outline-color: rgb(255, 0, 0);  /* rgb value */
+    }
+
+    p.ex3 {
+        border: 2px solid black;
+        outline-style: outset;
+        outline-color: #ff0000;  /* hex value */
+    }
+</style>
+</head>
+<body>
+<h2>The outline-color Property</h2>
+    <p>The outline-color property is used to set the color of the outline.</p>
+    <p class="ex1">A solid red outline</p>
+    <p class="ex2">A dotted blue outline</p>
+    <p class="ex3">An outset grey outline</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *CSS Outline Shorthand* -->
+<!--
+    The outline property is a shorthand property for setting the following individual outline properties:
+    outline-width
+    outline-style (required)
+    outline-color
+-->
+<!-- hepsini ayrı ayrı yazmak yerine "outline:" deyip yanyana yazabiliriz -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.ex1 {outline: dashed;}
+    p.ex2 {outline: dotted red;}
+    p.ex3 {outline: 5px solid yellow;}
+    p.ex4 {outline: thick ridge pink;}
+</style>
+</head>
+<body>
+    <p class="ex1">A dashed outline</p>
+    <p class="ex2">A dotted red outline</p>
+    <p class="ex3">A 5px solid yellow outline</p>
+    <p class="ex4">A thick ridge pink outline</p>
+</body>
+</html>
+
+
+
+<!-- *CSS Outline Offset* -->
+<!-- the "outline-offset" property adds space between an outline and the edge/border of an element. The space between an element and its outline is transparent -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p {
+        margin: 30px;
+        background: greenyellow;
+        border: 1px solid black;
+        outline: 1px solid red;
+        outline-offset: 15px;
+    }
+</style>
+</head>
+<body>
+    <p>This paragraph has an outline 15px outside the border edge</p><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS TEXT __________ -->
+
+<!-- 1)Text Color -->
+<!--
+    The color property is used to set the color of the text. The color is specified by:
+    a color name:  like "red"
+    a HEX value:   like "#ff0000"
+    an RGB value:  like "rgb(255,0,0)"
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        color: blue;
+    }
+
+    h1 {
+        color: green;
+    }
+</style>
+</head>
+<body>
+    <h1>This is heading 1</h1>
+    <p>This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+    <p>Another paragraph.</p><br><br><br>
+</body>
+</html>
+
+
+<!-- *Text Color and Background Color* -->
+<style>
+    body {
+        background-color: lightgrey;
+        color: blue;
+    }
+
+    h1 {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+
+
+
+<!-- 2)CSS Text Alignment -->
+<!-- the text-align property is used to set the horizontal alignment of a text -->
+<!-- a ext can be left or right aligned, centered, or justified -->
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: left;
+    }
+
+    h3 {
+        text-align: right;
+    }
+</style>
+
+
+<!-- when the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers): -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        border: 1px solid black;
+        padding: 10px;
+        width: 200px;
+        height: 200px;
+        text-align: justify;
+    }
+</style>
+</head>
+<body>
+    <h1>Example text-align: justify;</h1>
+    <p>The text-align: justify; value stretches the lines so that each line has equal width (like in newspapers and magazines).</p>
+    <div>
+        In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'
+    </div><br><br><br>
+</body>
+</html>
+
+
+<!-- *Vertical Alignment* -->
+<!-- the vertical-align property sets the vertical alignment of an element -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    img.top {
+        vertical-align: top;
+    }
+
+    img.middle {
+        vertical-align: middle;
+    }
+
+    img.bottom {
+        vertical-align: bottom;
+    }
+</style>
+</head>
+<body>
+    <p>An <img src="alex.jpg" alt="Alex" width="270" height="50"> image with a default alignment.</p><br>
+    <p>An <img class="top" src="alex.jpg" alt="Alex" width="270" height="50"> image with a top alignment.</p><br>
+    <p>An <img class="middle" src="alex.jpg" alt="Alex" width="270" height="50"> image with a middle alignment.</p><br>
+    <p>An <img class="bottom" src="alex.jpg" alt="Alex" width="270" height="50"> image with a bottom alignment.</p>
+</body>
+</html>
+
+
+
+
+<!-- 3)CSS Text Decoration -->
+<!-- the "text-decoration" property is used to set or remove decorations from text -->
+<!-- he value "text-decoration: none;" is often used to remove underlines from links -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <p>A link with no underline: <a href="https://www.w3schools.com">W3Schools.com</a></p>
+</body>
+</html>
+
+
+<!-- the other text-decoration values are used to decorate text: -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        text-decoration: overline;
+    }
+
+    h2 {
+        text-decoration: line-through;
+    }
+
+    h3 {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <h1>This is heading 1</h1>
+    <h2>This is heading 2</h2>
+    <h3>This is heading 3</h3>
+</body>
+</html>
+
+
+
+
+<!-- 4)CSS Text Transformation -->
+<head>
+<style>
+    p.uppercase {
+        text-transform: uppercase;
+    }
+    
+    p.lowercase {
+        text-transform: lowercase;
+    }
+    
+    p.capitalize {
+        text-transform: capitalize;
+    }
+</style>
+</head>
+<body>
+    <p class="uppercase">This is some text.</p>
+    <p class="lowercase">This is some text.</p>
+    <p class="capitalize">This is some text.</p>
+</body>
+</html>
+
+
+
+
+<!-- 5)CSS Text Spacing -->
+<!-- the "text-indent" property is used to specify the indentation of the first line of a text -->
+<!-- ilk satırın başlangıç aralğını belirler -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p {
+        text-indent: 70px;
+    }
+</style>
+</head>
+<body>
+    <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Letter Spacing* -->
+<!-- the "letter-spacing" property is used to specify the space between the characters in a text -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        letter-spacing: 3px;
+    }
+
+    h2 {
+        letter-spacing: -3px;
+    }
+</style>
+</head>
+<body>
+    <h1>harfler epey ayrı</h1>
+    <h2>harfler iç içe girmiş İETT otobüsü gibi</h2><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Word Spacing* -->
+<!-- the "word-spacing" property is used to specify the space between the words in a text -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        word-spacing: 10px;
+    }
+
+    h2 {
+        word-spacing: -5px;
+    }
+</style>
+</head>
+<body>
+    <h1>ben seni arkadaşım olarak görüyorum</h1>
+    <h2>oğlum az uzaklaş girme dibime</h2><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Line Height* -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.small {
+        line-height: 0.7;
+    }
+
+    p.big {
+        line-height: 1.8;
+    }
+</style>
+</head>
+<body>
+    <p>
+    This is a paragraph with a standard line-height.<br>
+    The default line height in most browsers is about 110% to 120%.<br>
+    </p>
+
+    <p class="small">
+    This is a paragraph with a smaller line-height.<br>
+    This is a paragraph with a smaller line-height.<br>
+    </p>
+
+    <p class="big">
+    This is a paragraph with a bigger line-height.<br>
+    This is a paragraph with a bigger line-height.<br><br><br><br>
+    </p>
+</body>
+</html>
+
+
+
+
+<!-- 6)CSS Text Shadow -->
+<!-- the "text-shadow" property adds shadow to text -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        text-shadow: 2px 2px;
+    }
+</style>
+</head>
+<body>
+    <h1>Text-shadow effect!</h1>
+</body>
+</html>
+
+
+<!-- we can add color -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        text-shadow: 2px 2px red;
+    }
+</style>
+</head>
+<body>
+    <h1>Colorful Text-shadow effect!</h1>
+</body>
+</html>
+
+
+<!-- we can add blur effect (5px) -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        text-shadow: 2px 2px 5px goldenrod;
+    }
+</style>
+</head>
+<body>
+    <h1>Colorful Text-shadow effect!</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS FONTS __________-->
+<!--
+    In CSS, there are two types of font family names:
+    generic family:  a group of font families with a similar look (like "Serif" or "Monospace")
+    font family:     a specific font family (like "Times New Roman" or "Arial")
+-->
+
+
+<!-- 1)Font Family -->
+<!-- the font family of a text is set with the "font-family" property -->
+<!-- the "font-family" property should hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font, and so on -->
+<!-- start with the font you want, and end with a generic family, to let the browser pick a similar font in the generic family, if no other fonts are available -->
+<!-- if the name of a font family is more than one word, it must be in quotation marks, like: "Times New Roman" -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .serif {
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .sansserif {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .monospace {
+        font-family: "Lucida Console", Courier, monospace;
+    }
+</style>
+</head>
+<body>
+    <h1>CSS font-family</h1>
+    <p class="serif">This is a paragraph, shown in the Times New Roman font.</p>
+    <p class="sansserif">This is a paragraph, shown in the Arial font.</p>
+    <p class="monospace">This is a paragraph, shown in the Lucida Console font.</p>
+</body>
+</html>
+
+
+
+
+<!-- 2)Font Style -->
+<!-- the "font-style" property is mostly used to specify italic text -->
+<!--
+    This property has three values:
+    normal:   The text is shown normally
+    italic:   The text is shown in italics
+    oblique:  The text is "leaning" (oblique is very similar to italic, but less supported)
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.normal {
+        font-style: normal;
+    }
+
+    p.italic {
+        font-style: italic;
+    }
+
+    p.oblique {
+        font-style: oblique;
+    }
+</style>
+</head>
+<body>
+    <p class="normal">this is a normal font style</p>
+    <p class="italic">this is an italic font style</p>
+    <p class="oblique">this is an oblique font style</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Font Weight* -->
+<!-- the "font-weight" property specifies the weight of a font -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.first {
+        font-weight: normal;
+    }
+
+    p.second {
+        font-weight: bold;
+    }
+
+    h3 {
+        text-align: center;
+        color: crimson;
+    }
+</style>
+</head>
+<body>
+    <h3>FONT WEIGHTS</h3>
+    <p class="first">normal font-weight</p>
+    <p class="second">bold font-weight</p><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Font Variant* -->
+<!-- the "font-variant" property specifies whether or not a text should be displayed in a small-caps font -->
+<!-- in a small-caps font, all lowercase letters are converted to uppercase letters -->
+<!-- however, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    p.normal {
+        font-variant: normal;
+    }
+
+    p.small {
+        font-variant: small-caps;
+    }
+</style>
+</head>
+<body>
+    <p class="normal">My name is Hege Refsnes.</p>
+    <p class="small">My name is Hege Refsnes.</p>
+</body>
+</html>
+
+
+
+
+<!-- 3)Font Size -->
+<!-- the "font-size" property sets the size of the text -->
+<!-- always use the proper HTML tags, like <h1> - <h6> for headings and <p> for paragraphs -->
+<!--
+    The font-size value can be an absolute, or relative size.
+    a)Absolute size:
+    -Sets the text to a specified size
+    -Does not allow a user to change the text size in all browsers (bad for accessibility reasons)
+    -Absolute size is useful when the physical size of the output is known
+
+    b)Relative size:
+    -Sets the size relative to surrounding elements
+    -Allows a user to change the text size in browsers
+-->
+
+
+<!-- *Set Font Size With Pixels* -->
+<!-- Setting the text size with pixels gives you full control over the text size: -->
+<style>
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+</style>
+
+
+
+<!-- *Set Font Size With Em* -->
+<!-- En çok önerilen kullanılış buymuş. çünkğ kullanıcılar yazı büyüklüğünü kendileri ayarlayabiliyormuş -->
+<!-- to allow users to resize the text (in the browser menu), many developers use em instead of pixels -->
+<!-- the em size unit is recommended by the W3C -->
+<!-- 1em is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em is 16px -->
+<!-- NOTE: The size can be calculated from pixels to em using this formula: pixels/16=em -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1 {
+        font-size: 2.5em;     /* 40px/16=2.5em */
+    }
+    
+    h2 {
+        font-size: 1.875em;   /* 30px/16=1.875em */
+    }
+    
+    p {
+        font-size: 0.875em;   /* 14px/16=0.875em */
+    }
+</style>
+</head>
+<body>
+    <h1>selamun</h1>
+    <h2>aleyküm</h2>
+    <p>biz geldik</p>
+</body>
+</html>
+
+
+
+
+<!-- 4)Font Shorthand -->
+<!-- to shorten the code, it is also possible to specify all the individual font properties in one property -->
+<!-- 
+    The "font" property is a shorthand property for:
+    font-style
+    font-variant
+    font-weight
+    font-size/line-height
+    font-family
+-->
+<!-- NOTE: The "font-size" and "font-family" values are required. If one of the other values is missing, their default value are used -->
+<style>
+    p.a {
+        font: 20px Arial, sans-serif;
+    }
+
+    p.b {
+        font: italic small-caps bold 12px/30px Georgia, serif;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS ICONS __________ -->
+<!-- the simplest way to add an icon to your HTML page, is with an icon library, such as "Font Awesome" -->
+<!-- add the name of the specified icon class to any inline HTML element (like <i> or <span>) -->
+<!-- all the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.) -->
+
+
+<!-- *Font Awesome Icons* -->
+<!--
+    To use the Font Awesome icons, go to fontawesome.com, sign in, and get a code to add in the <head> section of your HTML page:
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <i class="fas fa-cloud"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-car"></i>
+    <i class="fas fa-file"></i>
+    <i class="fas fa-bars"></i>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS LINKS __________ -->
+
+<!-- *Styling Links* -->
+<!-- links can be styled with any CSS property (e.g. color, font-family, background, etc.) -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    a {
+        color: hotpink;
+    }
+</style>
+</head>
+<body>
+    <p><b><a href="default.asp" target="_blank">This is a link</a></b></p>
+</body>
+</html>
+
+
+<!--
+    In addition, links can be styled differently depending on what state they are in.
+    The four links states are:
+    link:     link rengi 
+    visited:  daha önceden tıklanmış link rengi 
+    hover:    linkin üstüne gelince gözüken renk 
+    active:   linke basıldığı anca gözüken renk 
+-->
+<style>
+    /* unvisited link */
+    a:link {
+        color: red;
+    }
+
+    /* visited link */
+    a:visited {
+        color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: hotpink;
+    }
+
+    /* selected link */
+    a:active {
+        color: blue;
+    }
+</style>
+
+
+
+<!-- *Text Decoration* -->
+<!-- the "text-decoration" property is mostly used to remove underlines from links -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    a:link {
+        text-decoration: none;
+    }
+    
+    a:visited {
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    a:active {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <a href="www.google.com">google</a>
+    <p><a href="www.eksisozluk.com">ekşi sözlük</a></p>
+    <p><i><a href="www.instagram.com">instagram</a></i></p>
+</body>
+</html>
+
+
+
+<!-- *Background Color* -->
+<!-- the "background-color" property can be used to specify a background color for links -->
+<style>
+    a:link {
+        background-color: yellow;
+    }
+
+    a:visited {
+        background-color: cyan;
+    }
+
+    a:hover {
+        background-color: lightgreen;
+    }
+
+    a:active {
+        background-color: hotpink;
+    } 
+</style>
+
+
+
+<!-- *Link Buttons* -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    a:link, a:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+    <h2>Link Button</h2>
+    <p>A link styled as a button:</p>
+    <a href="default.asp" target="_blank">This is a link</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS LISTS __________ -->
+<!--
+    In HTML, there are two main types of lists:
+    unordered lists <ul>:  the list items are marked with bullets
+    ordered lists <ol>:    the list items are marked with numbers or letters
+-->
+
+
+<!-- *Different List Item Markers* -->
+<!-- the "list-style-type" property specifies the type of list item marker -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    ul.a {
+        list-style-type: circle;
+    }
+
+    ul.b {
+        list-style-type: square;
+    }
+
+    ol.c {
+        list-style-type: lower-latin;
+    }
+
+    ol.d {
+        list-style-type: upper-roman;
+    }
+</style>
+</head>
+<body>
+    <ul class="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Cake<li>
+    </ul>
+
+    <ul class="b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Cake</li>
+    </ul>
+
+    <ol class="c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Cake/li>
+    </ul>
+
+    <ol class="d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Cake</li>
+    </ul>
+</body>
+</html>
+
+
+
+<!-- *An Image as The List Item Marker* -->
+<!-- the "list-style-image" property specifies an image as the list item marker -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    ul {
+    list-style-image: url('tree.jpg');
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+</body>
+</html>
+
+
+
+<!-- *Position The List Item Markers* -->
+<!-- the "list-style-position" property specifies the position of the list-item markers (bullet points) -->
+<!--
+    inside:   madde işareti içte yer alır (yazı biraz daha yandan başlamış olur)
+    outside:  madde işareti dışta yer alır
+-->
+<style>
+    ul.a {
+        list-style-position: outside;
+    }
+
+    ul.b {
+        list-style-position: inside;
+    }
+</style>
+
+
+
+<!-- *Remove Default Settings* -->
+<!-- the "list-style-type: none" property can also be used to remove the markers/bullets -->
+<!-- note that the list also has default margin and padding. To remove this, add margin:0 and padding:0 to <ul> or <ol>: -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul.demo {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>Default list:</p>
+    <ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>  
+    
+    <p>Remove bullets, margin and padding:</p>
+    <ul class="demo">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>
+</body>
+</html>
+
+
+
+<!-- *List - Shorthand* -->
+<!-- the "list-style" property is a shorthand property. It is used to set all the list properties in one declaration -->
+<!--
+    When using the shorthand property, the order of the property values are:
+    1)list-style-type      (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+    2)list-style-position  (specifies whether the list-item markers should appear inside or outside the content flow)
+    3)list-style-image     (specifies an image as the list item marker)
+-->
+<style>
+    ul {
+        list-style: square inside url("sqpurple.gif");
+    }
+</style>
+
+
+
+<!-- *Styling List With Colors* -->
+<!-- NOTE: Anything added to the <ol> or <ul> tag, affects the entire list, while properties added to the <li> tag will affect the individual list items -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ol {
+            background: #ff9999;
+            padding: 20px;
+        }
+        
+        ul {
+            background: #3399ff;
+            padding: 20px;
+        }
+        
+        ol li {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+        
+        ul li {
+            background: #cce5ff;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Styling Lists With Colors:</h1>
+    
+    <ol>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ol>
+    
+    <ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS TABLES __________ -->
+<!--   
+    HTML table is defined with the <table> tag
+    <tr>:  tablo satırları. her <tr> de bir alt satıra geçer
+    <th>:  tablo başlıkları
+    <td>:  başlıktaki veriler
+-->
+
+
+<!-- *Table Borders* -->
+<!-- to specify table borders in CSS, use the "border" property -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table><br><br><br>
+</body>
+</html>
+
+
+
+<!-- *Collapse Table Borders* -->
+<!-- the "border-collapse" property sets whether the table borders should be collapsed into a single border -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {   /*  hepsini table'ın içine yazarsak tüm yazılanlar bir tablo içinde olur  */
+            border-collapse: collapse;
+        }
+
+        table, td, th {    /*  o yüzden bu kısım da oluşturuldu  */
+            border: 1px solid rgb(61, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
+<!-- *Table Width and Height* -->
+<!-- width and height of a table are defined by the width and height propertiesidth and height of a table are defined by the "width" and "height" properties -->
+<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th {
+        height: 50px;
+    }
+</style>
+
+
+
+<!-- *Horizontal Alignment* -->
+<!-- the "text-align" property sets the horizontal alignment (like left, right, or center) of the content in <th> or <td> -->
+<!-- by default, the content of <th> elements are "center-aligned" and the content of <td> elements are "left-aligned" -->
+<style>
+    th {
+        text-align: left;   /*  <th> kısmı artık tablonun solundan başlamış olacak  */
+    }
+</style>
+
+
+
+<!-- *Vertical Alignment* -->
+<!-- the "vertical-align" property sets the vertical alignment (like top, bottom, or middle) of the content in <th> or <td> -->
+<!-- by default, the vertical alignment of the content in a table is "middle" (for both <th> and <td> elements) -->
+<style>
+    td {   
+        vertical-align: bottom;  
+    }
+</style>
+
+
+
+<!-- *Table Padding* -->
+<!-- to control the space between the border and the content in a table, use the "padding" property on <td> and <th> elements -->
+<style>
+    th, td {
+        padding: 15px;
+    }
+</style>
+
+
+
+<!-- *Horizontal Dividers* -->
+<!-- add the "border-bottom" property to <th> and <td> for horizontal dividers -->
+<!-- her bir satırda <th> ve <td> lerin altına boydan boya çizgi çeker -->
+<style>
+    th, td {
+        border-bottom: 2px solid coral;
+    }
+</style> 
+
+
+
+<!-- *Hoverable Table* -->
+<!-- use the ":hover" selector on <tr> to highlight table rows on mouse over -->
+<!-- imleci tablonun üstüne götürdüğümüzde seçili gözükmesini sağlar -->
+<style>
+    tr:hover {
+        background-color: cyan;
+    }
+</style>
+
+
+
+<!-- *Striped Tables* -->
+<!-- for zebra-striped tables, use the "nth-child()" selector and add a "background-color" to all even (or odd) table rows -->
+<style>
+    tr:nth-child(even) {   /*  çift sayılardaki satırlar alttaki renkte olacak  */
+        background-color: darkmagenta;
+    }
+</style>
+
+
+
+<!-- *Table Color* -->
+<style>
+    th {
+        background-color: darkslateblue;  
+        color: deepskyblue;   /*  text color  */
+    }
+</style>
+
+
+
+<!-- *Responsive Table* -->
+<!-- a responsive table will display a horizontal scroll bar if the screen is too small to display the full content -->
+<!-- add a container element (like <div>) with "overflow-x: auto" around the <table> element to make it responsive: -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Table</h2>
+    <div style="overflow-x:auto;">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+          <th>Points</th>
+        </tr>
+
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+          <td>94</td>
+        </tr>
+
+        <tr>
+          <td>Adam</td>
+          <td>Johnson</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+          <td>67</td>
+        </tr>
+      </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS DISPLAY __________ -->
+
+<!-- 1)CSS Layout - The display Property -->
+<!-- the "display" property is the most important CSS property for controlling layout -->
+<!-- the "display" property specifies if/how an element is displayed -->
+<!-- 
+    every HTML element has a default display value depending on what type of element it is. The default display value for most elements is "block" or "inline" 
+-->    
+
+<!-- a)Block-level Elements -->
+<!-- a block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can) -->
+<!-- Examples of block-level elements:
+    <div>
+    <h1> - <h6>
+    <p>
+    <form>
+    <header>
+    <footer>
+    <section>
+-->
+
+
+<!-- b)Inline Elements -->
+<!-- an inline element does not start on a new line and only takes up as much width as necessary -->
+<!--
+    Examples of inline elements:
+    <span>
+    <a>
+    <img>
+-->
+
+
+
+<!-- Display: none; -->
+<!-- display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them -->
+
+
+
+<!-- Hide an Element - display: none or visibility: hidden? -->
+<!-- Hiding an element can be done by setting the display property to none. The element will be hidden, and the page will be displayed as if the element is not there -->
+<style>
+    h1.hidden {
+        display: none;
+    }
+</style>
+
+<!-- visibility:hidden; also hides an element -->
+<!-- however, the element will still take up the same space as before. The element will be hidden, but still affect the layout -->
+<style>
+    h1.hidden {
+        visibility: hidden;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-- __________ CSS DROPDOWNS __________ -->
+
+<!-- *Dropdown Menu* -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- *Dropdown Image* -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Dropdown Image</h2>
+<p>Move the mouse over the image below to open the dropdown content.</p>
+
+    <div class="dropdown">
+        <img src="wallpaper1.jpg" alt="Cinque Terre" width="100" height="50">
+        <div class="dropdown-content">
+        <img src="wallpaper1.jpg" alt="Cinque Terre" width="300" height="200">
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
